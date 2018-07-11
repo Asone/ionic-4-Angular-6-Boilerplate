@@ -2,16 +2,14 @@
 import { Component, ViewChild } from '@angular/core';
 
 /** Ionic Core **/
-import { Platform, NavController } from 'ionic-angular';
+// import { Platform, NavController } from 'ionic-angular';
 
 /** Ionic Modules **/
 
 /** Custom Components **/
-import { MainPage } from "../_Pages/Main/main.component";
+import { MainPage } from "../pages/main/main.page";
 
 /** Custom Services **/
-import { SessionService } from "../_Services/Session/session.service";
-import { AuthService } from '../_Services/Auth/auth.service';
 
 @Component({
   templateUrl: 'app.html'
@@ -19,16 +17,16 @@ import { AuthService } from '../_Services/Auth/auth.service';
 export class MyApp{
   rootPage:any = MainPage;
 
-  @ViewChild('content') content: NavController;
+//  @ViewChild('content') content: NavController;
 
   constructor(
-    platform: Platform
+   // platform: Platform
     ) {
-    platform.ready().then(() => {
+  //  platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
 
       // Here you can do any higher level native things you might need.
-    });
+  //  });
   }
 }
 

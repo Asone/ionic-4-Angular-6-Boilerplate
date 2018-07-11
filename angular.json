@@ -5,26 +5,21 @@
   "newProjectRoot": "projects",
   "projects": {
     "example-app": {
-      "root": "./dist",
+      "root": "./src",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "./dist",
-            "index": "./index.html",
-            "main": "./main.ts",
+            "index": "./www/index.html",
+            "main": "./src/app/app.module.ts",
             "tsConfig": "./tsconfig.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "./assets",
+                "input": "./www/assets",
                 "output": "/assets"
-              },
-              {
-                "glob": "favicon.ico",
-                "input": "./dist",
-                "output": "/"
               }
             ],
             "scripts": []

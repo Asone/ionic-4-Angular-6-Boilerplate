@@ -1,6 +1,6 @@
 
 /** Ionic Core **/
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicModule } from '@ionic/angular';
 
 /** Ionic Modules **/
 
@@ -17,6 +17,7 @@ import { MyApp } from './app.component';
 /** Pages Modules **/
 
 import { SharedModule } from './shared.module';
+import { MainPage } from '../pages/main';
 
 /** Custom Models **/
 
@@ -29,16 +30,14 @@ import { SharedModule } from './shared.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp),
     SharedModule,
   ],
-  bootstrap: [IonicApp],
+  bootstrap: [MyApp],
   entryComponents: [
     MyApp,
     MainPage
   ],
   providers: [
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {
