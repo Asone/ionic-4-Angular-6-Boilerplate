@@ -1,6 +1,17 @@
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+/**
+ * 
+ * This file provide some mocks angular modules from Ionic. It is useful for unit tests. 
+ * 
+ * @todo : Remove mocks for outdated or deprecated ionic classes.
+ * 
+ */
 
+import { StatusBar, StatusBarOriginal } from '@ionic-native/status-bar';
+import { SplashScreen, SplashScreenOriginal } from '@ionic-native/splash-screen';
+
+/**
+ * Mocks the platform module.  
+ */
 export class PlatformMock {
   public ready(): Promise<string> {
     return new Promise((resolve) => {
@@ -66,18 +77,27 @@ export class PlatformMock {
   }
 }
 
-export class StatusBarMock extends StatusBar {
+/**
+ * Mocks the Status bar module.  
+ */
+export class StatusBarMock extends StatusBarOriginal {
   styleDefault() {
     return;
   }
 }
 
-export class SplashScreenMock extends SplashScreen {
+/**
+ * Mocks the splash screen module.  
+ */
+export class SplashScreenMock extends SplashScreenOriginal {
   hide() {
     return;
   }
 }
 
+/**
+ * Mocks the navigation module.  
+ */
 export class NavMock {
  
   public pop(): any {
@@ -107,9 +127,5 @@ export class NavMock {
   public registerChildNav(nav: any): void {
     return ;
   }
-
-}
-
-export class DeepLinkerMock {
 
 }

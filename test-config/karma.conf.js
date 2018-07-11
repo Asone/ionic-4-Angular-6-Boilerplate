@@ -1,3 +1,9 @@
+/**
+ * 
+ * This a karma file for handling multiple environments. 
+ * 
+ */
+
 var webpackConfig = require('./webpack.test.js');
 
 module.exports = function(config) {
@@ -78,6 +84,7 @@ module.exports = function(config) {
     concurrency: Infinity,
   };
 
+  // Overrides parameters if in CI environment
   if (process.env.TRAVIS || process.env.CIRCLECI) {
     _config.browsers = ['ChromeHeadlessNoSandbox'];
     _config.singleRun = true;
