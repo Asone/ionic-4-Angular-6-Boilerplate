@@ -5,32 +5,26 @@
   "newProjectRoot": "projects",
   "projects": {
     "example-app": {
-      "root": "example-app",
+      "root": "./dist",
       "projectType": "application",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "example-dist",
-            "index": "example-app/index.html",
-            "main": "example-app/main.ts",
+            "outputPath": "./dist",
+            "index": "./index.html",
+            "main": "./main.ts",
             "tsConfig": "./tsconfig.json",
-            "polyfills": "example-app/polyfills.ts",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "example-app/assets",
+                "input": "./assets",
                 "output": "/assets"
               },
               {
                 "glob": "favicon.ico",
-                "input": "example-app",
+                "input": "./dist",
                 "output": "/"
-              }
-            ],
-            "styles": [
-              {
-                "input": "example-app/styles.css"
               }
             ],
             "scripts": []
@@ -48,8 +42,8 @@
               "buildOptimizer": true,
               "fileReplacements": [
                 {
-                  "src": "example-app/environments/environment.ts",
-                  "replaceWith": "example-app/environments/environment.prod.ts"
+                  "src": "src/environments/environment.ts",
+                  "replaceWith": "src/environments/environment.prod.ts"
                 }
               ]
             }

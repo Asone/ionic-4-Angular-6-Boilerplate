@@ -1,7 +1,22 @@
 {
   "name": "ionic-4-angular-6-boilerplate",
   "type": "angular",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "app_id": "",
-  "hooks": {}
+  "hooks": {
+    "build:before": [
+      "node_modules/@ionic/cli-hooks/add-cordova-engine.js"
+    ],
+    "build:after": [
+      "node_modules/@ionic/cli-hooks/remove-cordova-engine.js"
+    ],
+    "serve:before": [
+      "node_modules/@ionic/cli-hooks/add-cordova-engine.js"
+    ],
+    "serve:after": [
+      "node_modules/@ionic/cli-hooks/remove-cordova-engine.js"
+    ]
+  }
 }
